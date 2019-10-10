@@ -17,7 +17,7 @@ public class Email {
 
 
         String urlStr = String.join("https://www.ecs.soton.ac.uk/people/",input);
-    	URL url = new URL("https://www.ecs.soton.ac.uk/people/dem");
+    	URL url = new URL(urlStr);
         BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
 
         String inputLine;
