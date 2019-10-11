@@ -33,10 +33,9 @@ public class BareBones {
 		//allLines = new ArrayList<String>();
 		//behaviourCode = 1; //set state to normal
 		currentLine = "";
-		System.out.println("Enter a user name: ");
-    	Scanner in = new Scanner(System.in);
-    	//String input = "dem";
-    	String input = in.nextLine();
+		System.out.println("Enter File Path: ");
+    		Scanner in = new Scanner(System.in);
+    		String input = in.nextLine();
 		try {
 			allLines = Files.readAllLines(Paths.get(input));
 			//allLines = Files.readAllLines(Paths.get("C:/Users/jakub/OneDrive - University of Southampton/1201 Programming 1/Space Cadets/2-BareBones/complex.txt"));
