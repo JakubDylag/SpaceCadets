@@ -10,7 +10,7 @@ public class Email {
         //URL url = new URL("https://secure.ecs.soton.ac.uk/people/jd8g19");
 
 
-    	System.out.println("Enter a user name: ")
+    	System.out.println("Enter a user name: ");
     	Scanner in = new Scanner(System.in);
     	//String input = "dem";
     	String input = in.nextLine();
