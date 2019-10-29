@@ -22,8 +22,8 @@ public class BareBones {
 		implemented comments with: 	//
 
 		multi line comments with	 / *
-									....
-									* /
+						....
+						* /
 
 		subroutines:
 			need to define subroutine first, before they are used (like python)
@@ -42,15 +42,12 @@ public class BareBones {
 		variables = new HashMap<String, Integer>();
 		functionDefinitions = new HashMap<String, Integer>();
 		loops = new HashMap<Integer, Integer>(); 	//<END, START>
-		//allLines = new ArrayList<String>();
-		//behaviourCode = 1; //set state to normal
 		currentLine = "";
 		System.out.println("Enter File Path: ");
     	Scanner in = new Scanner(System.in);
     	String input = in.nextLine();
 		try {
 			allLines = Files.readAllLines(Paths.get(input));
-			//allLines = Files.readAllLines(Paths.get("C:/Users/jakub/OneDrive - University of Southampton/1201 Programming 1/Space Cadets/2-BareBones/complex.txt"));
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.exit(0);
@@ -71,8 +68,6 @@ public class BareBones {
 			opcode = opcode.toLowerCase();
 		} catch (IndexOutOfBoundsException e) {
 			System.out.println("END");
-			//ouput style choice??
-			//showVariables();
 			System.exit(0);
 		}
 
@@ -85,7 +80,6 @@ public class BareBones {
 				varName = parts[1];
 				if(variables.containsKey(varName) == false && !opcode.equals("clear") && !opcode.equals("run")) {
 					error("Variable "+ varName +" not declared yet");
-					//variables.put(varName, 0);
 				}
 			}
 			catch (ArrayIndexOutOfBoundsException e) {
@@ -118,9 +112,6 @@ public class BareBones {
 					skipToLine(endLine + 1);
 
 				}
-				//else (statment true)
-				//next line (just let run)
-
 			}
 			else if (opcode.equals("end")) {
 				System.out.println("RAN END");
@@ -225,35 +216,6 @@ public class BareBones {
 		//pop both and put into pair
 		return map;
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	public static <K, V> K getKeyForValue(Map<K, V> mapOfWords, V value) 
 	{		 
