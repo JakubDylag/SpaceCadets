@@ -1,0 +1,8 @@
+deffunc add;
+   incr X;
+endfunc;
+clear X;
+clear Y;
+clear Z;
+run add;
+incr X;
