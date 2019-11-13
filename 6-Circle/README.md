@@ -6,7 +6,7 @@ Original:
 ![alt text](https://raw.githubusercontent.com/JakubDylag/SpaceCadets/master/6-Circle/redballs.jpg)
 
 After Sobel Operator:
-![alt text](https://raw.githubusercontent.com/JakubDylag/SpaceCadets/master/6-Circle/sobelRedBalls.jpg)
+![alt text](https://raw.githubusercontent.com/JakubDylag/SpaceCadets/master/6-Circle/sobelRedBalls.png)
 
 After Sobel Operator with bounds:
-![alt text](https://raw.githubusercontent.com/JakubDylag/SpaceCadets/master/6-Circle/boundedSobelRedBalls.jpg)
+![alt text](https://raw.githubusercontent.com/JakubDylag/SpaceCadets/master/6-Circle/boundedSobelRedBalls.png)
