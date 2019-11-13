@@ -3,9 +3,11 @@ Was able to detect edges using the sobel operator, and better display the image 
 
 
 Original:
+
 ![alt text](https://raw.githubusercontent.com/JakubDylag/SpaceCadets/master/6-Circle/redballs.jpg)
 
 After Sobel Operator:
+
 ![alt text](https://raw.githubusercontent.com/JakubDylag/SpaceCadets/master/6-Circle/sobelRedBalls.png)
 
 After Sobel Operator with bounds:
