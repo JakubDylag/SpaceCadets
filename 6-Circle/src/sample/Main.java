@@ -104,27 +104,28 @@ public class Main extends Application {
 
             ArrayList<int[]> circle = new ArrayList<>();
 
-            //for every pixel
+
             int rmax = 40;
             int rmin = 35;
 
-        //DRAW CIRCLE
-        ImageView imageView = new ImageView(sImage);
 
-        //Setting the position of the image
-        imageView.setX(0);
-        imageView.setY(0);
+            ImageView imageView = new ImageView(image);
 
-        //setting the fit height and width of the image view
-        imageView.setFitHeight(height*3);
-        imageView.setFitWidth(width*3);
+            //Setting the position of the image
+            imageView.setX(0);
+            imageView.setY(0);
 
-        //Setting the preserve ratio of the image view
-        imageView.setPreserveRatio(true);
+            //setting the fit height and width of the image view
+            imageView.setFitHeight(height*3);
+            imageView.setFitWidth(width*3);
 
-        //Creating a Group object
-        Group root = new Group(imageView);
+            //Setting the preserve ratio of the image view
+            imageView.setPreserveRatio(true);
 
+            //Creating a Group object
+            Group root = new Group(imageView);
+
+            //for every pixel
             for(int y = rmin+10; y < height-rmax-10; y++) {
                 for (int x = rmin+10; x < width-rmax-10; x++) {
                     //for every possible radius
@@ -139,6 +140,8 @@ public class Main extends Application {
                             }
 
                         }
+
+        //DRAW CIRCLE
                         //ArrayList<Integer> k = new ArrayList<>(Arrays.asList(1,1,1));
                         if (value > 45) {
                             System.out.println(value);
