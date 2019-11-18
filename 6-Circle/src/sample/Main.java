@@ -8,17 +8,14 @@ ImageIcon
         setRGB()
 */
 
-import javax.swing.ImageIcon;
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.HashMap;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.scene.Group;
 import javafx.scene.image.Image;
@@ -43,6 +40,8 @@ public class Main extends Application {
 
             int width = (int)image.getWidth();
             int height = (int)image.getHeight();
+            System.out.println(width);
+            System.out.println(height);
             WritableImage wImage = new WritableImage(width, height);
             WritableImage sImage = new WritableImage(width, height);
 
@@ -52,6 +51,7 @@ public class Main extends Application {
             PixelReader pixelReaderNew = wImage.getPixelReader();
             PixelWriter swriter = sImage.getPixelWriter();
             PixelReader sReader = sImage.getPixelReader();
+
             for(int y = 0; y < height; y++) {
                 for(int x = 0; x < width; x++) {
                     Color c = pixelReader.getColor(x,y);
@@ -97,34 +97,69 @@ public class Main extends Application {
                     swriter.setColor(x,y, Color.gray(g));
                 }
             }
-            System.out.println(max);
-            System.out.println(min);
+//            System.out.println(max);
+//            System.out.println(min);
 
         //circle detection hough transform
 
+            ArrayList<int[]> circle = new ArrayList<>();
+
+            //for every pixel
+            int rmax = 40;
+            int rmin = 35;
 
         //DRAW CIRCLE
-            ImageView imageView = new ImageView(sImage);
+        ImageView imageView = new ImageView(sImage);
 
-            //Setting the position of the image
-            imageView.setX(0);
-            imageView.setY(0);
+        //Setting the position of the image
+        imageView.setX(0);
+        imageView.setY(0);
 
-            //setting the fit height and width of the image view
-            imageView.setFitHeight(455);
-            imageView.setFitWidth(500);
+        //setting the fit height and width of the image view
+        imageView.setFitHeight(height*3);
+        imageView.setFitWidth(width*3);
 
-            //Setting the preserve ratio of the image view
-            imageView.setPreserveRatio(true);
+        //Setting the preserve ratio of the image view
+        imageView.setPreserveRatio(true);
 
-            //Creating a Group object
-            Group root = new Group(imageView);
+        //Creating a Group object
+        Group root = new Group(imageView);
+
+            for(int y = rmin+10; y < height-rmax-10; y++) {
+                for (int x = rmin+10; x < width-rmax-10; x++) {
+                    //for every possible radius
+                    for (int r= rmin; r<=rmax; r++){
+                        int value =0;
+                        for(double a=0; a<(Math.PI * 2); a+=0.1){
+                            int measurex = (int) Math.round( x + r * Math.sin(a));
+                            int measurey = (int) Math.round( y + r * Math.cos(a));
+                            Color c =  sReader.getColor(measurex, measurey);
+                            if (c.getBlue() == 1){
+                                value++;
+                            }
+
+                        }
+                        //ArrayList<Integer> k = new ArrayList<>(Arrays.asList(1,1,1));
+                        if (value > 45) {
+                            System.out.println(value);
+                            Circle c = new Circle(x*3,y*3,r*3, Color.WHITE);
+                            c.setFill(Color.TRANSPARENT);
+                            c.setStroke(Color.BLUE);
+                            c.setStrokeWidth(3);
+                            root.getChildren().add(c);
+                            //circle.add( new int[]{x,y,r});
+
+                        }
+                    }
+                }
+            }
+
 
             //Creating a scene object
-            Scene scene = new Scene(root, 600, 500);
+            Scene scene = new Scene(root, width*3, height*3);
 
             //Setting title to the Stage
-            primaryStage.setTitle("Loading an image");
+            primaryStage.setTitle("Circle Detect");
 
             //Adding scene to the stage
             primaryStage.setScene(scene);
