@@ -9,7 +9,7 @@ Challenge 3: Bare Bones Interpreter Extended
 
 Challenge 4: Chat
 
-Challenge 5: 
+Challenge 5: Spirograph
 
 Challenge 6: Circle Detection
 
