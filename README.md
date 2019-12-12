@@ -1,7 +1,7 @@
 # SpaceCadets
 Southampton University Space Cadets Challenges
 
-Challenge 1: Email
+Challenge 1: Email Web Scrapper
 
 Challenge 2: Bare Bones Interpreter
 
