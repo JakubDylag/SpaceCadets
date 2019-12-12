@@ -1,4 +1,3 @@
 # Email Scrapper
 
-Simple Webscrapper
-Uses String manipulation and readers, instead of libraries (jsoup)
+This project is a Simple Webscrapper. It uses Scanner then String manipulation, instead of libraries (jsoup), to fetch the full name of a student of member of staff from the internal ecs website.
