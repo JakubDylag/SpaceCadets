@@ -1,6 +1,6 @@
 # Bare Bones Interpreter
 
-###The Language
+### The Language
 The interpreter is based of the [Bare Bones Language](http://www.brouhaha.com/~eric/software/barebones/bare_bones_language_summary.html).
 However some changes to the syntax have been made.
 
@@ -77,7 +77,7 @@ while X not 0 do;
 end;
 ```
 
-######Output
+###### Output
 ```text
 C:\Users\jakub\Documents\GitHub\SpaceCadets\2-BareBones>java BareBones
 Enter File Path:
@@ -353,5 +353,4 @@ W 0, X 0, Y 3, Z 6,
 RAN END
 RAN while
 END
-
 ```
