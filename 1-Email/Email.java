@@ -16,7 +16,7 @@ public class Email {
     	String input = in.nextLine();
 
 
-        String urlStr = String.join("https://www.ecs.soton.ac.uk/people/",input);
+        String urlStr = "https://www.ecs.soton.ac.uk/people/"+input;
     	URL url = new URL(urlStr);
         BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
 
@@ -36,7 +36,13 @@ public class Email {
         	title = title.replace("<","");
         	title = title.replace("/","");
         	//System.out.println(title.indexOf("|"));
-        	System.out.println(title.substring(0,title.indexOf("|")));
+			String name = title.substring(0,title.indexOf("|"));
+			if (name == "People"){
+				System.out.println("Name could not be found");
+			} else {
+				System.out.println(name);
+			}
+
 
         	//String partsOfTitle[] = title.split(" | ");
         	//System.out.println(partsOfTitle[0]);
